@@ -28,5 +28,7 @@ public class usersController {
     public usersEntity createUser(@RequestBody usersEntity user) {
         return usersRepository.save(user);
     }
-//Patchmapping usw. fehlt noch.
+
+    @DeleteMapping("/users/{id}")
+    void deleteEmployee(@PathVariable int id) {usersRepository.deleteById(id);}
 }
